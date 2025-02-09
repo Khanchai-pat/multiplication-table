@@ -3,7 +3,7 @@ pipeline {
     stage {
         stage('Build'){
             steps{
-                print"Hello Jenkins"
+                print "Hello Jenkins"
             }
         }
     }
