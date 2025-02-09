@@ -10,20 +10,10 @@
 // }
 pipeline {
     agent any
-    stages {  // ✅ ต้องมี "stages"
-        stage('Build') {  // ✅ stages ต้องมี stage ข้างใน
+    stages {  
+        stage('Build') { 
             steps {
                 echo 'Building...'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
             }
         }
     }
