@@ -1,19 +1,24 @@
-// pipeline {
-//     agent any
-//     stage{
-//         stage('Build'){
-//             steps{
-//                 print "Hello Jenkins"
-//             }
-//         }
-//     }
-// }
 pipeline {
     agent any
     stages {  
+        stage('git') { 
+            steps {
+                print 'git push'
+            }
+        }
         stage('Build') { 
             steps {
-                echo 'Building...'
+                print 'Building'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                print 'Deploying' 
+            }
+        }
+        stage('test') {
+            steps {
+                print 'Testing'
             }
         }
     }
