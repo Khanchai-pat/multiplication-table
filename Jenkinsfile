@@ -1,19 +1,22 @@
 pipeline {
     agent any
     stages {  
-        stage('git') { 
+        stage('Check Out') { 
             steps {
-                print 'git push'
+                print 'Check Out'
+                checkout([
+                $class: 'GitSCM', 
+                branches: [[name: '*/main']], 
+                userRemoteConfigs: [ [ 
+                credentialsId: '1234', 
+                url: "https://github.com/Khanchai-pat/multiplication-table.git "
+                ] ]
+                ])
             }
         }
         stage('Build') { 
             steps {
-                print 'Building'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                print 'Deploying' 
+                print 'Building and Deploying'
             }
         }
         stage('test') {
